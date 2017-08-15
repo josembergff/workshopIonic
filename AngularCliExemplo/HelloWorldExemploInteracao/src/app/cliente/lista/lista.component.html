@@ -1,0 +1,11 @@
+<input type="text" [(ngModel)]="nomeLista" >
+
+<p (click)='adicionarCliente()'>
+  {{nomeLista}}
+</p>
+
+<ul *ngIf='listagem.length > 0'>
+  <li   *ngFor='let cliente of listagem'>
+    {{cliente.Nome}}
+  </li>
+</ul>
