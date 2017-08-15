@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExemplo", "ApiExemplo\ApiExemplo.csproj", "{456E7FC3-D754-4784-A8CF-D270DE11B488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{FD906B9E-4031-4DAD-8883-CF4E2EC8E0E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{E86CCA08-FD47-42D9-B996-42F5C62EE671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{456E7FC3-D754-4784-A8CF-D270DE11B488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456E7FC3-D754-4784-A8CF-D270DE11B488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456E7FC3-D754-4784-A8CF-D270DE11B488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456E7FC3-D754-4784-A8CF-D270DE11B488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD906B9E-4031-4DAD-8883-CF4E2EC8E0E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD906B9E-4031-4DAD-8883-CF4E2EC8E0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD906B9E-4031-4DAD-8883-CF4E2EC8E0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD906B9E-4031-4DAD-8883-CF4E2EC8E0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E86CCA08-FD47-42D9-B996-42F5C62EE671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E86CCA08-FD47-42D9-B996-42F5C62EE671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E86CCA08-FD47-42D9-B996-42F5C62EE671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E86CCA08-FD47-42D9-B996-42F5C62EE671}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
