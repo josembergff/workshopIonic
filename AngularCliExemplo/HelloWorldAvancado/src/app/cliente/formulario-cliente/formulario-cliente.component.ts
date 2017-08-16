@@ -9,18 +9,18 @@ import { FormGroup, NgForm } from "@angular/forms";
 })
 export class FormularioClienteComponent implements OnInit {
 
-  @Input() clienteAtual:Cliente;
-  @Output() acaoCriar:EventEmitter<Cliente> = new EventEmitter<Cliente>();
-  cadastroCliente:Cliente;
+  @Input() clienteAtual: Cliente;
+  @Output() acaoCriar: EventEmitter<Cliente> = new EventEmitter<Cliente>();
+  cadastroCliente: Cliente;
 
-  constructor() { 
+  constructor() {
     this.cadastroCliente = new Cliente();
   }
 
   ngOnInit() {
   }
 
-  salvarCliente(form: any){
+  salvarCliente(form: any) {
     this.acaoCriar.next(this.cadastroCliente);
     this.cadastroCliente = new Cliente();
     form.reset();

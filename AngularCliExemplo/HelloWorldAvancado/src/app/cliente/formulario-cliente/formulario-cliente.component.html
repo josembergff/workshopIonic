@@ -3,29 +3,29 @@
 </h2>
 
 <form (ngSubmit)="salvarCliente(formularioCliente)" #formularioCliente="ngForm" name="formularioAtividade" onsubmit="return false">
-  <div class="row">
-      <label for="Nome">Nome cliente</label>
-      <input type="text" name="Nome" id="Nome" [(ngModel)]="cadastroCliente.Nome" #Nome="ngModel" required placeholder="Nome do cliente" />
-      <div [hidden]="Nome.valid || Nome.pristine" class="alert alert-danger">
-          Informe o nome do cliente
-      </div>
-  </div>
+    <div class="row">
+        <label for="Nome">Nome cliente</label>
+        <input type="text" name="Nome" id="Nome" [(ngModel)]="cadastroCliente.Nome" #Nome="ngModel" required placeholder="Nome do cliente" />
+        <div [hidden]="Nome.valid || Nome.pristine" class="alert alert-danger">
+            Informe o nome do cliente
+        </div>
+    </div>
 
-  <div class="row">
-      <label for="NomeComposto">Nome composto</label>
-      <input type="checkbox" name="NomeComposto" id="NomeComposto" [(ngModel)]="cadastroCliente.NomeComposto" #NomeComposto="ngModel" />
-  </div>
+    <div class="row">
+        <label for="NomeComposto">Nome composto</label>
+        <input type="checkbox" name="NomeComposto" id="NomeComposto" [(ngModel)]="cadastroCliente.NomeComposto" #NomeComposto="ngModel" />
+    </div>
 
-  <div class="row">
-      <label for="Sobrenome">Sobrenome</label>
-      <input type="text" name="Sobrenome" id="Sobrenome" [(ngModel)]="cadastroCliente.Sobrenome" #Sobrenome="ngModel" [required]="cadastroCliente.NomeComposto" placeholder="Sobrenome do cliente" />
-      <div [hidden]="Sobrenome.valid" class="alert alert-danger">
-          Informe o sobrenome do cliente
-      </div>
-  </div>
-    
+    <div class="row">
+        <label for="Sobrenome">Sobrenome</label>
+        <input type="text" name="Sobrenome" id="Sobrenome" [(ngModel)]="cadastroCliente.Sobrenome" #Sobrenome="ngModel" [required]="cadastroCliente.NomeComposto" placeholder="Sobrenome do cliente" />
+        <div [hidden]="Sobrenome.valid" class="alert alert-danger">
+            Informe o sobrenome do cliente
+        </div>
+    </div>
+
     <div class="row">
         <button class="btn btn-primary" [disabled]="formularioCliente.invalid">Salvar</button>
     </div>
-    
+
 </form>

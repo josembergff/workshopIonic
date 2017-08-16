@@ -8,15 +8,16 @@ import { Cliente } from "app/modelo/cliente";
 })
 export class DetalheClienteComponent implements OnInit {
 
-  @Input() clienteAtual:Cliente;
-  @Output() acaoExcluir:any = new EventEmitter<Cliente>();
+  @Input() clienteAtual: Cliente;
+  @Output() acaoExcluir: any = new EventEmitter<Cliente>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  excluir(){
+  excluir(evento: any) {
+    console.log("evento ", evento.returnValue);
     this.acaoExcluir.next(this.clienteAtual);
     this.clienteAtual = null;
   }
