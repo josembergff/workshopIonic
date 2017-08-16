@@ -20,6 +20,9 @@
                         Nome
                     </th>
                     <th>
+                        Sobrenome
+                    </th>
+                    <th>
                         Data de Cadastro
                     </th>
                 </tr>
@@ -33,7 +36,10 @@
                         {{cliente.Nome}}
                     </td>
                     <td>
-                        {{cliente.DataCadastro}}
+                        {{cliente.Sobrenome}}
+                    </td>
+                    <td>
+                        {{cliente.DataCriacao | date:'dd/MM/yyyy'}}
                     </td>
                 </tr>
                 <tr *ngIf="listagem.length <= 0">
