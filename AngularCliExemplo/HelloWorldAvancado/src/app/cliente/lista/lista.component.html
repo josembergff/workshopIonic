@@ -1,11 +1,49 @@
-<input type="text" [(ngModel)]="nomeLista" >
+<app-detalhe-cliente *ngIf="clienteAtual" [clienteAtual]="clienteAtual" (acaoExcluir)="excluirCliente($event)"></app-detalhe-cliente>
 
-<p (click)='adicionarCliente()'>
-  {{nomeLista}}
-</p>
+<div class="col-sm-12">
+    <button class="btn btn-primary" (click)="adicionarCliente()">
+      {{mostrarFormulario ? "Fechar cadastro":"Adicionar Cliente"}}
+    </button>
+</div>
 
-<ul *ngIf='listagem.length > 0'>
-  <li   *ngFor='let cliente of listagem'>
-    {{cliente.Nome}}
-  </li>
-</ul>
+<div [ngClass]="{'col-sm-12': !mostrarFormulario, 'col-sm-6':mostrarFormulario}">
+
+
+    <div class="table-responsive">
+        <table class="table table-condensed table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        *
+                    </th>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Data de Cadastro
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let cliente of listagem'>
+                    <td>
+                        {{cliente.Codigo}}
+                    </td>
+                    <td (click)="abrirCliente(cliente)">
+                        {{cliente.Nome}}
+                    </td>
+                    <td>
+                        {{cliente.DataCadastro}}
+                    </td>
+                </tr>
+                <tr *ngIf="listagem.length <= 0">
+                    <td colspan="3">Sem clientes</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-sm-6" *ngIf="mostrarFormulario">
+    <app-formulario-cliente [clienteAtual]="clienteAtual" (acaoCriar)="cadastroCliente($event)"></app-formulario-cliente>
+</div>

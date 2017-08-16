@@ -1,0 +1,8 @@
+<div class="col-sm-12">
+    <h2>
+        {{clienteAtual?.Nome}}
+    </h2>
+</div>
+<div class="col-sm-12" *ngIf="clienteAtual">
+    <button class="btn btn-danger" (click)="excluir()">Remover</button>
+</div>
