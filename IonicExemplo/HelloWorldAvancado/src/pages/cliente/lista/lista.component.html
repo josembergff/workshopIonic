@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{nomeLista}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="adicionarCliente()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar [(ngModel)]="filtroAtual" [showCancelButton]="true">
+    </ion-searchbar>
+    <ion-list>
+        <button ion-item *ngFor='let cliente of listagem | filtroTabela:filtroAtual' (click)="abrirCliente(cliente)">
+      
+      {{cliente.Nome}}
+      <div class="item-note" item-right>
+        {{cliente.DataCriacao | date:"dd MMMM yyyy"}}
+      </div>
+    </button>
+    </ion-list>
+
+    <ion-list *ngIf="listagem.length <= 0">
+        Sem clientes
+    </ion-list>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="fechar()">
+            <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Detalhes do cliente</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="padding">
+
+    <ion-list>
+        <ion-item> {{clienteAtual?.Nome}}</ion-item>
+        <ion-item> {{clienteAtual?.Sobrenome}}</ion-item>
+        <ion-item> {{clienteAtual?.DataCriacao | date:"dd MMMM yyyy"}}}}</ion-item>
+
+        <ion-item> <button ion-button color="danger" (click)="excluir($event)">Remover</button></ion-item>
+    </ion-list>
+</ion-content>

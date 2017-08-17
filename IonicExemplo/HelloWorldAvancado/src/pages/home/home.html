@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Inicio</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h3>Aplicativo workshop Autotrac</h3>
+    <ion-refresher (ionRefresh)="atualizarLocalizacao($event)">
+        buscando localização...
+    </ion-refresher>
+    <ion-list>
+        <ion-item>Latitude: {{latitude}}</ion-item>
+        <ion-item>Longitude: {{longitude}}</ion-item>
+    </ion-list>
+
+</ion-content>
