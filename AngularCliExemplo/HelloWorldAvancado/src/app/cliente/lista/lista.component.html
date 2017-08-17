@@ -13,6 +13,11 @@
         <table class="table table-condensed table-striped table-hover">
             <thead>
                 <tr>
+                    <td>
+                        <input type="text" name="filtroAtual" id="filtroAtual" [(ngModel)]="filtroAtual" placeholder="buscar na lista" />
+                    </td>
+                </tr>
+                <tr>
                     <th>
                         *
                     </th>
@@ -28,18 +33,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor='let cliente of listagem'>
+                <tr *ngFor='let cliente of listagem | filtroTabela:filtroAtual'>
                     <td>
                         {{cliente.Codigo}}
                     </td>
-                    <td (click)="abrirCliente(cliente)">
+                    <td appConfirmar (click)="abrirCliente(cliente)">
                         {{cliente.Nome}}
                     </td>
                     <td>
                         {{cliente.Sobrenome}}
                     </td>
                     <td>
-                        {{cliente.DataCriacao | date:'dd/MM/yyyy'}}
+                        {{cliente.DataCriacao | date:"dd MMMM yyyy"}}
                     </td>
                 </tr>
                 <tr *ngIf="listagem.length <= 0">

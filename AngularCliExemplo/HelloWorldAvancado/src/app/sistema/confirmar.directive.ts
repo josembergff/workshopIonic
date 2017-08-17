@@ -1,13 +1,30 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, Renderer, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appConfirmar]'
 })
 export class ConfirmarDirective {
 
-  @HostListener('click', ['$event'])
-  confirm(event: Event) {
-    let confirmar = window.alert('Ação sem retorno!');
+  constructor(
+    private renderer: Renderer,
+    private el: ElementRef
+  ) { }
+  // Event listeners for element hosting
+  // the directive
+  @HostListener('mouseenter') onMouseEnter() {
+    this.hover(true);
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.hover(false);
+  }
+  // Event method to be called on mouse enter and on mouse leave
+  hover(shouldUnderline: boolean) {
+    if (shouldUnderline) {
+      this.renderer.setElementStyle(this.el.nativeElement, 'text-decoration', 'underline');
+    } else {
+      this.renderer.setElementStyle(this.el.nativeElement, 'text-decoration', 'none');
+    }
   }
 
 }

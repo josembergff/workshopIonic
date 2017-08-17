@@ -15,6 +15,7 @@ export class ListaComponent implements OnInit {
   listagem: Array<Cliente>;
   clienteAtual: Cliente;
   mostrarFormulario: Boolean;
+  filtroAtual: String;
 
   constructor(private servicoCliente: ClienteService) {
     this.nomeLista = "Lista de Clientes";
