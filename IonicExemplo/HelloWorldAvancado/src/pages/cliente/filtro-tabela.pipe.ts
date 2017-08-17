@@ -13,7 +13,7 @@ export class FiltroTabelaPipe implements PipeTransform {
     if (filtroGeral && filtroGeral.length > 0) {
       let filtroRecebido = filtroGeral.toString().toLowerCase();
       retorno = retorno.filter(item => item.Nome.toLowerCase().indexOf(filtroRecebido) >= 0
-        || item.Sobrenome ? item.Sobrenome.toLowerCase().indexOf(filtroRecebido) >= 0 : false
+        || item.Sobrenome.toLowerCase().indexOf(filtroRecebido) >= 0
         || dataPipe.transform(item.DataCriacao, 'dd MMMM yyyy').toLowerCase().indexOf(filtroRecebido) >= 0
       );
     }
